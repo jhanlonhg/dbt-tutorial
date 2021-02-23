@@ -40,3 +40,5 @@ Connection:
 
 ## Notes
 DBT uses a profile YAML file located at `~/.dbt/profiles.yml`. Note that this file is used for managing credentials, and as such should not be committed into source control. If we used DBT for our project, we may need secrets or some other solution. 
+
+If changing a model from a table into a view, use `dbt run --full-refresh` else you will run into an error at runtime, as the existing table conflicts with the view. Note that running with the `--full-refresh` flag will cause the table to be dropped.
