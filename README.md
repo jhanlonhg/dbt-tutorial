@@ -4,9 +4,11 @@ https://docs.getdbt.com/tutorial/setting-up
 
 ## Notes
 ### Useful Commands
-  `dbt debug` :
-      Tells you about the ability to connect to your remote DB via your current set up. Very valuable.
-      Example output:
+`dbt debug` :
+
+Tells you about the ability to connect to your remote DB via your current set up. Very valuable.
+
+Example output:
       
 ```
 $ dbt debug
