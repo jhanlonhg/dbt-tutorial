@@ -42,3 +42,7 @@ Connection:
 DBT uses a profile YAML file located at `~/.dbt/profiles.yml`. Note that this file is used for managing credentials, and as such should not be committed into source control. If we used DBT for our project, we may need secrets or some other solution. 
 
 If changing a model from a table into a view, use `dbt run --full-refresh` else you will run into an error at runtime, as the existing table conflicts with the view. Note that running with the `--full-refresh` flag will cause the table to be dropped.
+
+Out of the box, dbt ships with the following tests: `unique`, `not_null`, `accepted_values`, and `relationships` (i.e. referential integrity). 
+Documentation on writing custom tests can be found here: https://docs.getdbt.com/docs/building-a-dbt-project/tests. 
+Note that there is also a `dbt-utils` library with additional test cases (https://github.com/fishtown-analytics/dbt-utils/tree/0.2.4/#schema-tests)
