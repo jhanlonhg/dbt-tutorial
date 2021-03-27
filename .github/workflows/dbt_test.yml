@@ -52,6 +52,9 @@ jobs:
       env:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
+    - run: 'cat ./dbt-service-account.json'
+      shell: bash
+
     - name: Test dbt Connection
       run: dbt debug
 
