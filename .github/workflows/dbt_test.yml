@@ -52,20 +52,10 @@ jobs:
       env:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
-    - run: 'cp ./profiles.yml ~/profiles.yml'
-      shell: bash
+    # - run: 'cp ./profiles.yml ~/profiles.yml'
+    #   shell: bash
 
     - name: Run Tests
       run: |
         dbt run
         dbt test
-
-#       # Runs a single command using the runners shell
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
