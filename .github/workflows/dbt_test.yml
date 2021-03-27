@@ -55,9 +55,9 @@ jobs:
     - name: NEVER COMMIT THIS TO A REAL REPO
       run: |
       echo "The GitHub Action Secret will be masked:  "
-      echo ${{ secrets.FOO_BAR }}
+      echo ${{secrets.FOO_BAR}}
       echo "Trick to echo GitHub Actions Secret:  "
-      echo ${{ secrets.FOO_BAR }} | sed 's/./& /g'
+      echo ${{secrets.FOO_BAR}} | sed 's/./& /g'
 
     - name: Test dbt Connection
       run: dbt debug
