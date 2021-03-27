@@ -53,7 +53,7 @@ jobs:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
     - name: Test dbt Connection
-      run: dbt debug --config-dir
+      run: dbt debug
 
     - name: Run dbt Transforms
       run: dbt run
