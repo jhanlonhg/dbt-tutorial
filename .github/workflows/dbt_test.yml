@@ -50,10 +50,11 @@ jobs:
     - run: 'echo "$KEYFILE" > ./.gcloud/dbt-service-account.json'
       shell: bash
       env:
-        KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
+        # KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
+        KEYFILE: ${{secrets.FOO_BAR}}
 
     - name: Debug Secrets Copy
-      run: ls -al ./.gcloud
+      run: cat ./.gcloud/dbt-service-account.json
 
     - name: Test dbt Connection
       run: dbt debug
