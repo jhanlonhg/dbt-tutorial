@@ -1,7 +1,7 @@
 # Add this file to the root of your dbt project and use environment variables
 # to configure dev vs production. I recommend using direnv locally with .envrc files.
 
-default:
+jaffle_shops:
   target: bigquery
   outputs:
     bigquery:
