@@ -47,14 +47,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install dbt
 
-    - run: 'echo "$KEYFILE" > ./.gcloud/dbt-service-account.json'
+    - run: 'echo $(<"$KEYFILE") > ./.gcloud/dbt-service-account.json'
       shell: bash
       env:
-        # KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
-        KEYFILE: ${{secrets.FOO_BAR}}
-
-    - name: Debug Secrets Copy
-      run: cat ./.gcloud/dbt-service-account.json
+        KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
     - name: Test dbt Connection
       run: dbt debug
