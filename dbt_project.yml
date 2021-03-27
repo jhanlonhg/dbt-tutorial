@@ -6,7 +6,7 @@ name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
 
-# This setting configures which "profile" dbt uses for this project.
+# This setting configures which "profile" dbt uses for this project (see `profiles.yml`).
 profile: jaffle_shops
 
 # These configurations specify where dbt should look for different types of files.

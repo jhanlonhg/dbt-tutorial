@@ -17,7 +17,7 @@ on:
 env:
   DBT_PROFILES_DIR: ./
   DBT_GOOGLE_PROJECT: dbt-hello-world-305619
-#   DBT_GOOGLE_BIGQUERY_DATASET: bigquery-dataset-id
+  DBT_GOOGLE_BIGQUERY_DATASET: dbt-hello-world-305619:dbt_john
   DBT_GOOGLE_BIGQUERY_KEYFILE: ./.gcloud/dbt-service-account.json
 
 
