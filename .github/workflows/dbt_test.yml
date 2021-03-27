@@ -53,7 +53,7 @@ jobs:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
     - name: Debug Secrets Copy
-      run: ls -al ./.gcloud/dbt-service-account.json
+      run: ls -al ./.gcloud
 
     - name: Test dbt Connection
       run: dbt debug
