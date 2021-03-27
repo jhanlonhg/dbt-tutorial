@@ -52,6 +52,9 @@ jobs:
       env:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
+    - run: 'cp ./profiles.yml ~/profiles.yml'
+      shell: bash
+
     - name: Run Tests
       run: |
         dbt run
