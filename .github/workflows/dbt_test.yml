@@ -28,7 +28,7 @@ jobs:
     # This value will be displayed to the user during runtime
     name: Running DBT Tests
     # The type of runner that the job will run on
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -36,10 +36,10 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2
 
-    - name: Install Python 3.8.8
+    - name: Install Python 3.8.x
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8.8
+        python-version: 3.8.x
 
     - name: Install DBT
       # Runs a set of commands using the runners shell
@@ -51,12 +51,6 @@ jobs:
       shell: bash
       env:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
-
-    - run: 'cat ./dbt-service-account.json'
-      shell: bash
-
-    - name: Test dbt Connection
-      run: dbt debug
 
     - name: Run dbt Transforms
       run: dbt run
