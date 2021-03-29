@@ -47,12 +47,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install dbt
 
-    - run: 'echo "$KEYFILE" > ./dbt-service-account.json'
+    - name: Pull in Secrets
+      run: echo "$KEYFILE" > ./dbt-service-account.json
       shell: bash
       env:
         KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE}}
 
-    - name: Run dbt Transforms
+    - name: Run dbt Transformations
       run: dbt run
 
     - name: Run dbt Tests
